@@ -1,0 +1,26 @@
+{
+  "name": "newsforstocks",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "fetch:naver:firecrawl": "node scripts/firecrawl-naver.mjs",
+    "fetch:naver:direct": "node scripts/fetch-naver-news.mjs",
+    "titles": "node scripts/firecrawl-search-titles.mjs --query"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@fast-csv/format": "^5.0.5",
+    "axios": "^1.12.2",
+    "cheerio": "^1.1.2",
+    "fast-csv": "^5.0.5"
+  },
+  "devDependencies": {
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.2"
+  },
+  "description": "",
+  "type": "module"
+}

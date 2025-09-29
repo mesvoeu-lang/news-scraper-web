@@ -1,0 +1,19 @@
+{
+    "mcpServers": {
+      "firecrawl-mcp-server": {
+        "command": "cmd",
+        "args": [
+          "/c",
+          "npx",
+          "-y",
+          "@smithery/cli@latest",
+          "run",
+          "@Krieg2065/firecrawl-mcp-server",
+          "--key",
+          "1042c347-0010-460c-8014-bc626da21ee9",
+          "--profile",
+          "occupational-chimpanzee-MMqRBv"
+        ]
+      }
+    }
+  }

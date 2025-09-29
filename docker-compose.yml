@@ -1,0 +1,10 @@
+version: '3.8'
+
+services:
+  news-scraper:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - FIRECRAWL_KEY=${FIRECRAWL_KEY}
+    restart: unless-stopped
