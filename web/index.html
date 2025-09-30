@@ -50,7 +50,7 @@
       <button id="go" type="submit">검색</button>
       <button id="cancel" type="button" style="display:none; background:#dc2626;">취소</button>
     </form>
-    <div class="muted">최대 100건까지 표시됩니다.</div>
+    <div class="muted">최대 30건까지 표시됩니다.</div>
     <button id="exclude-keywords-btn" type="button" style="margin-top:8px; padding:6px 12px; border:1px solid #ccc; border-radius:6px; background:#f8fafc; cursor:pointer; font-size:14px; color:#333;">제외 키워드 관리</button>
     <button id="exclude-suffixes-btn" type="button" style="margin-top:8px; margin-left:8px; padding:6px 12px; border:1px solid #ccc; border-radius:6px; background:#f8fafc; cursor:pointer; font-size:14px; color:#333;">제외 접미사 관리</button>
     
@@ -329,7 +329,7 @@
           const activeSuffixes = excludeSuffixes.filter(suffix => suffixStates[suffix] !== false);
           const excludeSuffixesParam = activeSuffixes.join(',');
           
-          const res = await fetch(`/api/search?q=${encodeURIComponent(query)}&limit=100&exclude_keywords=${encodeURIComponent(excludeKeywordsParam)}&exclude_suffixes=${encodeURIComponent(excludeSuffixesParam)}`);
+          const res = await fetch(`/api/search?q=${encodeURIComponent(query)}&limit=30&exclude_keywords=${encodeURIComponent(excludeKeywordsParam)}&exclude_suffixes=${encodeURIComponent(excludeSuffixesParam)}`);
           const reader = res.body.getReader();
           currentReader = reader;
           const decoder = new TextDecoder();
