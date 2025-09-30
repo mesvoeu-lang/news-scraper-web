@@ -50,6 +50,11 @@ def search(q: str = Query(..., description="검색어"), limit: int = 100):
     return items
 
 
+@app.get("/api/search")
+async def api_search(q: str = Query(..., description="검색어"), limit: int = 100, exclude_keywords: str = Query("", description="제외 키워드 (쉼표로 구분)"), exclude_suffixes: str = Query("", description="제외 접미사 (쉼표로 구분)")):
+    """API 엔드포인트 - search-stream과 동일한 기능"""
+    return await search_stream(q, limit, exclude_keywords, exclude_suffixes)
+
 @app.get("/search-stream")
 async def search_stream(q: str = Query(..., description="검색어"), limit: int = 100, exclude_keywords: str = Query("", description="제외 키워드 (쉼표로 구분)"), exclude_suffixes: str = Query("", description="제외 접미사 (쉼표로 구분)")):
     limit = max(1, min(100, limit))
