@@ -43,3 +43,8 @@ naver_news_titles_*.csv
 # Build outputs
 dist/
 build/
+
+# Deployment files
+.vercel/
+railway.json
+vercel.json
